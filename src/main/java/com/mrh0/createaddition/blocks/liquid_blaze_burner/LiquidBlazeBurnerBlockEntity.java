@@ -216,11 +216,14 @@ public class LiquidBlazeBurnerBlockEntity extends SmartBlockEntity implements IH
 		if (remainingBurnTime > 0)
 			return;
 
-		if (activeFuel == FuelType.SPECIAL) {
-			activeFuel = FuelType.NORMAL;
-			remainingBurnTime = MAX_HEAT_CAPACITY / 2;
-		} else
-			activeFuel = FuelType.NONE;
+		// This seems to make the superheated fuel switch to a normal fuel at the end of it's life.
+		// This is undesirable, so I'm commenting it out.
+    //	if (activeFuel == FuelType.SPECIAL) {
+    //		activeFuel = FuelType.NORMAL;
+    //		remainingBurnTime = MAX_HEAT_CAPACITY / 2;
+    //	} else {
+		activeFuel = FuelType.NONE;
+		// };
 
 		updateBlockState();
 	}
