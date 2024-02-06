@@ -424,7 +424,7 @@ public class LiquidBlazeBurnerBlockEntity extends SmartBlockEntity implements IH
 
 	protected BlazeBurnerBlock.HeatLevel getHeatLevelFromFuelType(FuelType fuel) {
 		BlazeBurnerBlock.HeatLevel level = BlazeBurnerBlock.HeatLevel.SMOULDERING;
-		switch (activeFuel) {
+		switch (fuel) {
 		case SPECIAL:
 			level = BlazeBurnerBlock.HeatLevel.SEETHING;
 			break;
