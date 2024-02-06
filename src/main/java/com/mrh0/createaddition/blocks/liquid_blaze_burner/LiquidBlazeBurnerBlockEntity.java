@@ -161,7 +161,7 @@ public class LiquidBlazeBurnerBlockEntity extends SmartBlockEntity implements IH
 		if (remainingBurnTime > MAX_HEAT_CAPACITY)
 			return;
 
-		remainingBurnTime += recipeCache.get().getBurnTime();
+		remainingBurnTime += recipeCache.get().getBurnTime() / 10;
 		activeFuel = recipeCache.get().isSuperheated() ? FuelType.SPECIAL : FuelType.NORMAL;
 
 		TransferUtil.extractAnyFluid(tankInventory, FLUID_CONSUMPTION_THRESHOLD);
